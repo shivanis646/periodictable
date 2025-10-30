@@ -1,0 +1,121 @@
+/* ==== Periodic Table Grid ==== */
+.table {
+  display: grid;
+  grid-template-columns: repeat(18, 70px);
+  grid-auto-rows: 70px;
+  gap: 6px;
+  justify-content: center;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Element Box ==== */
+.element {
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: #222;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.element:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ==== Element Content ==== */
+.number {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.symbol {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+.name {
+  font-size: 10px;
+  margin-top: 2px;
+  color: #444;
+}
+
+/* ==== Category Colors ==== */
+.category-alkali-metals {
+  background-color: #f4a261;
+}
+.category-alkaline-earth-metals {
+  background-color: #f7b267;
+}
+.category-transition-metals {
+  background-color: #58a4b0;
+}
+.category-post-transition-metals {
+  background-color: #c3aed6;
+}
+.category-metalloids {
+  background-color: #f1c0e8;
+}
+.category-reactive-non-metals {
+  background-color: #8ac926;
+}
+.category-noble-gases {
+  background-color: #ff9f1c;
+}
+.category-lanthanides {
+  background-color: #5e60ce;
+}
+.category-actinides {
+  background-color: #00b4d8;
+}
+.category-unknown-properties {
+  background-color: #adb5bd;
+}
+
+/* ==== LAN & ACTINIDE ROWS ==== */
+/* Place them as extra rows below main table */
+.lanthanide-row {
+  grid-column: 1 / span 18;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.actinide-row {
+  grid-column: 1 / span 18;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 900px) {
+  .table {
+    grid-template-columns: repeat(18, 50px);
+    grid-auto-rows: 50px;
+    gap: 4px;
+  }
+
+  .symbol {
+    font-size: 18px;
+  }
+
+  .name {
+    font-size: 8px;
+  }
+}
